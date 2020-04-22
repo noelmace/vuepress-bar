@@ -1,6 +1,7 @@
 # vuepress-bar
 
-VuePress sidebar and navbar generator based on file and directory structure. Focus your documents, not sidebar or navbar.
+VuePress sidebar and navbar generator based on file and directory structure.
+Focus your documents, not sidebar or navbar.
 
 # Synopsis
 
@@ -9,9 +10,9 @@ VuePress sidebar and navbar generator based on file and directory structure. Foc
 **.vuepress/config.js**
 
 ```js
-const menuConfig = require("vuepress-bar")();                                 // Call directly with default values.
-const getConfig = require("vuepress-bar");                                    // Import as a function
-const { nav, sideBar } = require("vuepress-bar")(options);                    // With options
+const menuConfig = require("vuepress-bar")(); // Call directly with default values.
+const getConfig = require("vuepress-bar"); // Import as a function
+const { nav, sideBar } = require("vuepress-bar")(options); // With options
 const { nav, sideBar } = require("vuepress-bar")(`${__dirname}/..`, options); // Provide location of `.vuepress`.
 ```
 
@@ -24,8 +25,8 @@ const menuConfig = require("vuepress-bar")();
 
 module.exports = {
   themeConfig: {
-    ...menuConfig
-  }
+    ...menuConfig,
+  },
 };
 ```
 
@@ -46,11 +47,14 @@ module.exports = {
 
 # Features
 
-- **Creates navbar & sidebar:** Add `navbar` prefix to your directories such as `nav.guide` or `nav.01.guide`
-- **Custom sort:** Prefix directories with numbers, or add `order` meta to files such as `01.guide`
+- **Creates navbar & sidebar:** Add `navbar` prefix to your directories such as
+  `nav.guide` or `nav.01.guide`
+- **Custom sort:** Prefix directories with numbers, or add `order` meta to files
+  such as `01.guide`
 - **Multiple Sidebars**
 - **No configuration**
-- Adds README.md to the first available group like VuePress web site. (May be disabled by options)
+- Adds README.md to the first available group like VuePress web site. (May be
+  disabled by options)
 - Possible to pass parameters in directory names. (See advanced example below.)
 
 # Examples
@@ -80,7 +84,10 @@ module.exports = {
 }
 ```
 
-- Readme is moved into first group: `'/nav.02.api/': [ { title: 'Classes', children: [ '', 'classes/member' ] } ]` instead of `'/nav.02.api/': [ '', { title: 'Classes', children: [ 'classes/member' ] } ]`
+- Readme is moved into first group:
+  `'/nav.02.api/': [ { title: 'Classes', children: [ '', 'classes/member' ] } ]`
+  instead of
+  `'/nav.02.api/': [ '', { title: 'Classes', children: [ 'classes/member' ] } ]`
 
 ## Without Navbar
 
@@ -109,7 +116,8 @@ module.exports = {
 
 ## Advanced
 
-It is possible to pass sidebar parameters in directory names. You may pass following parameters after double dash `--` separated by comma:
+It is possible to pass sidebar parameters in directory names. You may pass
+following parameters after double dash `--` separated by comma:
 
 - `nc` sets `collapsable` to `false`.
 - `dX` sets `sidebarDepth` to `X`.
@@ -136,7 +144,8 @@ It is possible to pass sidebar parameters in directory names. You may pass follo
 
 # Notes
 
-- VuePress requires `README.md` as default file in a `navbar` link. Forgetting `README.md` would skip that creation of that navbar item.
+- VuePress requires `README.md` as default file in a `navbar` link. Forgetting
+  `README.md` would skip that creation of that navbar item.
 
 # Options
 
